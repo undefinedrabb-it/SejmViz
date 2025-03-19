@@ -6,13 +6,13 @@ const [resMPs, resClubs] = await Promise.all([
 ]);
 
 const clubsC = {
-  Lewica: 'bg-[#851a64]',
-  KO: 'bg-[#ff6e28]',
-  'PSL-TD': 'bg-[#d77a4e]',
-  'Polska2050-TD': 'bg-[#d77a4e]',
-  Kukiz15: 'bg-[#000330]',
-  PiS: 'bg-[#000dc0]',
-  Konfederacja: 'bg-[#633e1c]',
+  Lewica: "bg-[#851a64]",
+  KO: "bg-[#ff6e28]",
+  "PSL-TD": "bg-[#d77a4e]",
+  "Polska2050-TD": "bg-[#d77a4e]",
+  Kukiz15: "bg-[#000330]",
+  PiS: "bg-[#000dc0]",
+  Konfederacja: "bg-[#633e1c]",
 };
 const clubS = Object.keys(clubsC);
 
@@ -23,12 +23,12 @@ clubs.sort((a, b) => clubS.indexOf(a.id) - clubS.indexOf(b.id));
 
 const [mpsE, clubsE] = [
   mps
-    .filter(m => m.active)
-    .map(mp => ({
+    .filter((m) => m.active)
+    .map((mp) => ({
       ...mp,
       color: clubsC[mp.club],
     })),
-  clubs.map(club => ({
+  clubs.map((club) => ({
     ...club,
     color: clubsC[club.id],
   })),
