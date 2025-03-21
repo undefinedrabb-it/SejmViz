@@ -6,7 +6,9 @@
       "sharedGlobals"
     ],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.mjs"
     ],
     "sharedGlobals": []
   },
@@ -23,6 +25,23 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
+      }
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "next:start",
+        "buildTargetName": "next:build",
+        "devTargetName": "next:dev",
+        "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
       }
     }
   ]

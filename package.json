@@ -4,12 +4,19 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "next": "~15.1.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
   "devDependencies": {
+    "@nx/eslint": "20.6.2",
     "@nx/js": "20.6.2",
+    "@nx/next": "20.6.2",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "eslint": "~8.57.0",
     "nx": "20.6.2",
     "tslib": "^2.3.0",
     "typescript": "~5.7.2"
