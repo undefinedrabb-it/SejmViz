@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "module": "ESNext",
+    "target": "ESNext",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "ESNext",
+      "DOM",
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -12,7 +12,6 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -23,7 +22,13 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": [
+        "*"
+      ],
+    }
   },
   "include": [
     "**/*.cjs",
@@ -35,6 +40,5 @@
   ],
   "exclude": [
     "node_modules",
-    "__exclude"
   ]
 }

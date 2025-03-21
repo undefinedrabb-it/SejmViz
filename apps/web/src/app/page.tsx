@@ -36,14 +36,6 @@ const initialState = {
   clubs: addIsHidden(clubsE09),
 } satisfies StateT;
 
-type ActionT =
-  | { type: "setFocused"; payload: StateT["focused"] }
-  | { type: "selectAllFocused" }
-  | { type: "unselectAllFocused" }
-  | { type: "setMps"; payload: StateT["mps"] }
-  | { type: "setClubs"; payload: StateT["clubs"] }
-  | { type: "setTerm"; payload: (typeof terms)[number]["value"] };
-
 const setTerm = (term: (typeof terms)[number]["value"]): StateT => {
   switch (term) {
     case 9:
@@ -62,6 +54,13 @@ const setTerm = (term: (typeof terms)[number]["value"]): StateT => {
 
 const chooseClubs = (term: StateT["term"]["value"]) => (term === 9 ? clubKs09 : clubKs10);
 
+type ActionT =
+  | { type: "setFocused"; payload: StateT["focused"] }
+  | { type: "selectAllFocused" }
+  | { type: "unselectAllFocused" }
+  | { type: "setMps"; payload: StateT["mps"] }
+  | { type: "setClubs"; payload: StateT["clubs"] }
+  | { type: "setTerm"; payload: (typeof terms)[number]["value"] };
 const reducer = (state: StateT, action: ActionT): StateT => {
   switch (action.type) {
     case "selectAllFocused":
@@ -112,14 +111,8 @@ const Home = () => {
     });
   };
   return (
-    <>
-      <Head>
-        <title>SejmViz</title>
-        <meta name='description' content='polish sejm deputies infographic' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <div className='flex flex-col h-screen'>
-        <main className='grow bg-gray-800 flex-rows flex justify-around p-4'>
+    <div className='flex flex-col h-screen'>
+      <main className='grow bg-gray-800 flex-rows flex justify-around p-4'>
           <div className='flex flex-col items-center gap-64'>
             {focused.length === 0 ?
               <button className='bg-gray-700 text-white p-2 rounded-md' onClick={() => dispatch({ type: "selectAllFocused" })}>
