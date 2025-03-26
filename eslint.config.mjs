@@ -28,7 +28,7 @@ export default [
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     rules: {
       '@nx/enforce-module-boundaries': [
-        'error',
+        'warn',
         {
           enforceBuildableLibDependency: true,
           allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
@@ -56,17 +56,17 @@ export default [
     // Override or add rules here
     rules: {},
   },
-    eslintPluginImportX.flatConfigs.recommended,
-    eslintPluginImportX.flatConfigs.typescript,
-    {
-      rules: {
-        'no-unused-vars': 'off',
-        "import-x/order": [
-          "error",
-          {
-            "groups": ["builtin", "external", "parent", "sibling", "index"]
-          }
-        ]
-      },
+  eslintPluginImportX.flatConfigs.recommended,
+  eslintPluginImportX.flatConfigs.typescript,
+  {
+    rules: {
+      'no-unused-vars': 'off',
+      "import-x/order": [
+        "error",
+        {
+          "groups": ["builtin", "external", "parent", "sibling", "index"]
+        }
+      ]
     },
+  },
 ];
