@@ -1,24 +1,3 @@
-import type { ClubT } from "./clubs-09";
-
-export type MPT = {
-  id: number;
-  firstLastName: string;
-  lastFirstName: string;
-  firstName: string;
-  secondName: string;
-  lastName: string;
-  email: string;
-  active: boolean;
-  inactiveCause: string;
-  waiverDesc: string;
-  discritNum: number;
-  districtName: string;
-  voivodeship: string;
-  club: ClubT["id"];
-};
-
-export type MPEnhanedT = Pick<MPT, "id" | "club"> & { color: string };
-
 export const mpsE = [
   {
     active: true,
@@ -9079,4 +9058,4 @@ export const mpsE = [
     voivodeship: "śląskie",
     color: "bg-[#b5761d]",
   },
-] as unknown as Readonly<MPEnhanedT>[];
+];

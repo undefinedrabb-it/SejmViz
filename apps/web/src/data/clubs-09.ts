@@ -1,28 +1,3 @@
-export type ClubK =
-  | "KO"
-  | "Konfederacja"
-  | "Wolnościowcy"
-  | "KP"
-  | "Kukiz15"
-  | "Lewica"
-  | "niez."
-  | "PiS"
-  | "Polska2050"
-  | "Porozumienie"
-  | "LD"
-  | "PS";
-
-export type ClubT = {
-  email: string;
-  fax: string;
-  id: ClubK;
-  membersCount: number;
-  name: string;
-  phone: string;
-};
-
-export type ClubsEnhanedT = Pick<ClubT, "id" | "name"> & { color: string };
-
 export const clubsE = [
   {
     email: "kp-lewica@kluby.sejm.pl",
@@ -132,5 +107,4 @@ export const clubsE = [
     phone: "",
     color: "bg-[#b5761d]",
   },
-] as unknown as Readonly<ClubsEnhanedT>[];
-export const clubKs = clubsE.map((c) => c.id) as Readonly<ClubK[]>;
+];

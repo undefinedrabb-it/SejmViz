@@ -19,6 +19,11 @@ const Element = ({ title, date, changes }: { title: string; date: string; change
 
 const Changelogs = [
   {
+    title: "Version 0.0.3",
+    date: "2025.03.26",
+    changes: ["Migrate to NX monorepo", "simplify flow", " simplify types", "Staticly generate pages for terms"],
+  },
+  {
     title: "Version 0.0.2",
     date: "2025.03.19",
     changes: ["Update all packages", "Change Next Pages to Next App"],

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import { useState } from "react";
 
@@ -6,7 +8,7 @@ const op = (isHidden?: boolean | null) => (isHidden ? "opacity-10" : "");
 
 export const Circle = ({ color, isHidden }: { color?: string; isHidden?: boolean | null }) => (
   <div
-    className={`h-10 w-10 min-w-fit rounded-full border-2 border-solid 
+    className={`h-10 w-10 min-w-fit rounded-full border-2 border-solid
     border-white ${bg(color)} ${op(isHidden)} flex place-content-center items-center justify-center`}
   >
     {" "}
@@ -17,7 +19,7 @@ export const CircleWithLogo = ({ color, isHidden, imgUrl }: { color?: string; is
 
   return (
     <div
-      className={`h-10 w-10 min-w-fit rounded-full border-2 border-solid 
+      className={`h-10 w-10 min-w-fit rounded-full border-2 border-solid
     border-white ${bg(color)} ${op(isHidden)} flex place-content-center items-center justify-center`}
     >
       {showImg ?
